@@ -6,6 +6,7 @@ import com.capstone.governow.data.respone.LoginResponse
 import com.capstone.governow.data.respone.ProfileResponse
 import com.cpastone.governow.data.request.AspirationRequest
 import com.cpastone.governow.data.respone.AspirationResponse
+import com.cpastone.governow.data.respone.DetailPostResponse
 import com.cpastone.governow.data.respone.GetAllAspirationResponse
 import com.cpastone.governow.data.respone.NewsResponse
 import com.cpastone.governow.data.respone.PostResponse
@@ -22,6 +23,7 @@ import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Part
+import retrofit2.http.Path
 
 interface ApiService {
 
@@ -71,4 +73,7 @@ interface ApiService {
 
     @GET("aspirations/all")
     fun getAllAspirations(): Call<GetAllAspirationResponse>
+
+    @GET("post/{id}")
+    fun getPost(@Path("id") id: String): Call<DetailPostResponse>
 }
