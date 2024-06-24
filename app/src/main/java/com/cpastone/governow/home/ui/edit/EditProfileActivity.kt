@@ -27,6 +27,7 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 import androidx.fragment.app.commit
+import com.cpastone.governow.data.respone.UpdateProfileResponse
 
 class EditProfileActivity : AppCompatActivity() {
     private val viewModel by viewModels<EditProfileViewModel> {
@@ -124,7 +125,7 @@ class EditProfileActivity : AppCompatActivity() {
                     if(insertStory != null && insertStory.message != ""){
                         finish()
                     }else{
-                        Toast.makeText(this, "Error, Fill all field", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Server Error: ${insertStory?.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
